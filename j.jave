@@ -1,0 +1,52 @@
+import java.util.Scanner
+
+class FitTrack{
+    String name;
+    int steps;
+    int calories;
+    int sleep;
+    FitTrack(String pname,int psteps,int pcalories,int psleep){
+        this.name=pname;
+        this.steps=psteps;
+        this.calories=pcalories;
+        this.sleep=psleep;
+         System.out.println("----------WELCOME TO FitTrack-------------------");
+    System.out.println("user name:"+name);
+    System.out.println("calories:"+calories);
+    System.out.println("steps:"+steps);
+    System.out.println("sleep:"+sleep);
+    }
+    
+    void walk(){
+        if(steps>=10000){
+            System.out.println("Step Goal is Achieved");
+        }
+        else{
+             System.out.println("Step Goal is not Achieved");
+        }
+        
+    }
+    void sleep(){
+        if(sleep<7){
+            System.out.println("Sleep Duration is ok");
+        }
+        else{
+             System.out.println("Sleep Duration Below Recommended Level");
+        }
+    }
+}
+
+class Test
+{
+    public static void main(String[] args){
+        Scanner sc = new Scannar(System.in);
+        System.out.println("Enter your name");
+        String name= sc.nextLine();
+        System.out.println("Enter your steps");
+        int steps= sc.nextInt();
+        System.out.println("Enter your calories");
+        int cal= sc.nextInt();
+        System.out.println("Enter your sleep");
+        int sleep= sc.nextInt();
+    }
+}
