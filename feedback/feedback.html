@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastAPI Feedback Form</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+
+        .container{
+            width: 500px;
+            margin: 60px auto;
+        }
+
+        h1{
+            margin-bottom: 30px;
+        }
+
+        input, textarea{
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        textarea{
+            height: 90px;
+            resize: none;
+        }
+
+        button{
+            width: 100%;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: #555;
+        }
+
+        h2{
+            margin-top: 30px;
+        }
+
+        #response{
+            margin-top: 10px;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>FastAPI Feedback Form</h1>
+
+    <form id="feedbackForm">
+
+        <input type="text" id="name" placeholder="Student Name" required>
+
+        <input type="text" id="topic" placeholder="Topic" required>
+
+        <input type="number" id="rating" placeholder="Rating 1 to 5" min="1" max="5" required>
+
+        <textarea id="comment" placeholder="Comment" required></textarea>
+
+        <button type="submit">Submit Feedback</button>
+
+    </form>
+
+    <h2>Response</h2>
+
+    <div id="response"></div>
+
+</div>
+
+<script>
+    const form = document.getElementById("feedbackForm");
+    const response = document.getElementById("response");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const topic = document.getElementById("topic").value;
+        const rating = document.getElementById("rating").value;
+        const comment = document.getElementById("comment").value;
+
+        response.innerHTML = `
+            <p><strong>Student Name:</strong> ${name}</p>
+            <p><strong>Topic:</strong> ${topic}</p>
+            <p><strong>Rating:</strong> ${rating}</p>
+            <p><strong>Comment:</strong> ${comment}</p>
+            <p style="color:green;"><strong>Feedback Submitted Successfully!</strong></p>
+        `;
+
+        form.reset();
+    });
+</script>
+
+</body>
+</html>
