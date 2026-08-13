@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./backend/uploads:/app/uploads
+    container_name: askmynotes-backend
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    container_name: askmynotes-frontend
+    depends_on:
+      - backend
