@@ -8,8 +8,8 @@ function App() {
   const [error, setError] = useState("");
   const fileRef = useRef(null);
 
-  // Change this to your deployed backend URL when deployed
-  const API_URL = "https://askmynotes-api-712f0.containers.snapdeploy.app";
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+
   const askQuestion = async () => {
     const cleanedQuestion = question.trim();
     if (!cleanedQuestion) {
@@ -50,6 +50,18 @@ function App() {
 
   return (
     <div className="page">
+      {/* Floating Bubbles */}
+      <div className="bubbles">
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+      </div>
+
       <div className="container">
         <h1>AskMyNotes</h1>
         <p>Ask questions about your notes</p>

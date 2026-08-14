@@ -1,222 +1,103 @@
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.page {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #d8c3ff, #f8d7ff, #c9b6ff);
+/* Floating Bubbles */
+.bubbles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
   overflow: hidden;
-  position: relative;
-  font-family: 'Poppins', sans-serif;
 }
 
-/* Background Blur Circles */
-.page::before {
-  content: "";
+.bubble {
   position: absolute;
-  width: 350px;
-  height: 350px;
-  background: #ffffff55;
-  border-radius: 50%;
-  top: -120px;
-  left: -100px;
-  filter: blur(80px);
-}
-
-.page::after {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: #ffb6d955;
-  border-radius: 50%;
   bottom: -100px;
-  right: -80px;
-  filter: blur(80px);
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  animation: rise 15s infinite ease-in;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
-/* Card */
-.container {
-  width: 420px;
-  background: #fffafc;
-  border-radius: 40px;
-  padding: 40px 35px;
-  box-shadow:
-    0 20px 50px rgba(119, 72, 255, .18),
-    inset 0 2px 2px rgba(255, 255, 255, .9);
-  text-align: center;
-  position: relative;
-  z-index: 1;
+.bubble:nth-child(1) {
+  width: 40px;
+  height: 40px;
+  left: 10%;
+  animation-duration: 12s;
+  animation-delay: 0s;
 }
 
-.container h1 {
-  color: #7253d4;
-  font-size: 42px;
-  font-weight: 800;
-  font-family: 'Poppins', sans-serif;
+.bubble:nth-child(2) {
+  width: 20px;
+  height: 20px;
+  left: 20%;
+  animation-duration: 18s;
+  animation-delay: 2s;
 }
 
-.container p {
-  color: #777;
-  margin-top: 8px;
-  margin-bottom: 30px;
-  font-family: 'Poppins', sans-serif;
+.bubble:nth-child(3) {
+  width: 50px;
+  height: 50px;
+  left: 35%;
+  animation-duration: 14s;
+  animation-delay: 4s;
 }
 
-/* Question Input */
-.question-input {
-  width: 100%;
-  padding: 16px 20px;
-  border: none;
-  border-radius: 50px;
-  margin-bottom: 20px;
-  background: #ffffff;
-  box-shadow:
-    inset 6px 6px 12px #ececec,
-    inset -6px -6px 12px #ffffff;
-  outline: none;
-  font-size: 16px;
-  color: #444;
-  font-family: 'Poppins', sans-serif;
+.bubble:nth-child(4) {
+  width: 80px;
+  height: 80px;
+  left: 50%;
+  animation-duration: 20s;
+  animation-delay: 1s;
 }
 
-.question-input::placeholder {
-  color: #aaa;
+.bubble:nth-child(5) {
+  width: 30px;
+  height: 30px;
+  left: 65%;
+  animation-duration: 16s;
+  animation-delay: 3s;
 }
 
-/* File Input */
-.file-input {
-  width: 100%;
-  margin-bottom: 25px;
-  color: #555;
-  font-family: 'Poppins', sans-serif;
+.bubble:nth-child(6) {
+  width: 60px;
+  height: 60px;
+  left: 80%;
+  animation-duration: 22s;
+  animation-delay: 5s;
 }
 
-.file-input::file-selector-button {
-  border: none;
-  background: #b58cff;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: .3s;
-  font-family: 'Poppins', sans-serif;
+.bubble:nth-child(7) {
+  width: 25px;
+  height: 25px;
+  left: 45%;
+  animation-duration: 13s;
+  animation-delay: 6s;
 }
 
-.file-input::file-selector-button:hover {
-  background: #9c6dff;
-}
-
-/* Ask Button */
-button {
-  width: 100%;
-  border: none;
-  padding: 16px;
-  border-radius: 50px;
-  background: linear-gradient(135deg, #bb8cff, #8c6cff);
-  color: white;
-  font-size: 18px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: .35s;
-  box-shadow: 0 12px 25px rgba(122, 84, 255, .35);
-  font-family: 'Poppins', sans-serif;
-}
-
-button:hover:not(:disabled) {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 35px rgba(122, 84, 255, .4);
-}
-
-button:active:not(:disabled) {
-  transform: translateY(0);
-}
-
-button:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-/* Output Box */
-.output {
-  margin-top: 25px;
-  min-height: 130px;
-  background: #f8f5ff;
-  border-radius: 25px;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #555;
-  box-shadow:
-    inset 5px 5px 12px #ece7ff,
-    inset -5px -5px 12px white;
-  text-align: left;
-  font-family: 'Poppins', sans-serif;
-}
-
-.answer,
-.answer-placeholder {
-  width: 100%;
-}
-
-.answer strong,
-.answer-placeholder strong {
-  color: #444;
-}
-
-/* Error */
-.error {
-  color: #d32f2f;
-  width: 100%;
-}
-
-/* Loading */
-.loading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.loading p {
-  margin-top: 12px;
-  color: #777;
-  margin-bottom: 0;
-}
-
-/* Spinner */
-.spinner {
+.bubble:nth-child(8) {
   width: 45px;
   height: 45px;
-  border: 5px solid #d6c2ff;
-  border-top: 5px solid #8c6cff;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
+  left: 90%;
+  animation-duration: 17s;
+  animation-delay: 2.5s;
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
+@keyframes rise {
+  0% {
+    bottom: -100px;
+    transform: translateX(0) scale(1);
+    opacity: 0;
   }
-}
-
-/* Responsive */
-@media (max-width: 480px) {
-  .container {
-    width: 90%;
-    padding: 30px 20px;
+  10% {
+    opacity: 1;
   }
-  .container h1 {
-    font-size: 32px;
+  50% {
+    transform: translateX(30px) scale(1.1);
+  }
+  100% {
+    bottom: 110vh;
+    transform: translateX(-20px) scale(0.8);
+    opacity: 0;
   }
 }
