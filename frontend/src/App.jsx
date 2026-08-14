@@ -29,7 +29,7 @@ function App() {
         formData.append("file", fileRef.current.files[0]);
       }
 
-      const response = await fetch(`${API_URL}/ask`, {
+      const response = await fetch(`${API_URL}/predict`, {
         method: "POST",
         body: formData,
       });
