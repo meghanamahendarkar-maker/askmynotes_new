@@ -16,9 +16,9 @@ app.add_middleware(
 
 UPLOAD_DIR = Path("uploads")
 UPLOAD_DIR.mkdir(exist_ok=True)
+@app.post("/predict")
 
-@app.post("/ask")
-async def ask(
+async def predict(
     question: str = Form(...),
     file: UploadFile = File(None)
 ):
